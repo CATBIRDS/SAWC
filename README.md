@@ -12,4 +12,6 @@ SAWC requires the following non-standard modules to be installed:
 pip install --upgrade PyQt5
 pip install --upgrade Pillow
 ```
+Additionally, it requires [FFmpeg](https://www.ffmpeg.org) installed and in your system's PATH.
 Assuming those are installed, you can simply run client.py, either directly or through the aforementioned drag-and-drop approach.
+
