@@ -81,7 +81,7 @@ class FFMPEGHandler():
         artist = ''
         title = ''
         metadata = ''
-        
+        comment = ''
         result = subprocess.Popen(["ffprobe", f"{os.path.split(audio_file)[1]}"], stdout = subprocess.PIPE, stderr = subprocess.STDOUT, shell=True)
         for x in result.stdout.readlines():
             if "ARTIST" in x.decode("utf-8"):
@@ -462,6 +462,7 @@ def superFast():
     if not qValue:
         qValue = quality[10]
     metadataResult = subprocess.Popen(["ffprobe", f"{os.path.split(audio_file)[1]}"], stdout = subprocess.PIPE, stderr = subprocess.STDOUT, shell=True)
+    comment = ''
     for x in metadataResult.stdout.readlines():
         if "ARTIST" in x.decode("utf-8"):
             artist = x[22:].decode("utf-8")
